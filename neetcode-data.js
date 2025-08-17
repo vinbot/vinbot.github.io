@@ -2266,6 +2266,6 @@ window.neetcodeData = {
                     }
                 }
             ]
-        }
+        },
     ]
 }
