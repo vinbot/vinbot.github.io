@@ -2252,19 +2252,19 @@ window.neetcodeData = {
                         "python_solution": "class Solution:\n    def getSum(self, a: int, b: int) -> int:\n        MASK = 0xFFFFFFFF\n        MAX_INT = 0x7FFFFFFF\n\n        while b != 0:\n            a, b = (a ^ b) & MASK, ((a & b) << 1) & MASK\n\n        return a if a <= MAX_INT else ~(a ^ MASK)"
                     }
                 },
-                {
-                    "id": 7,
-                    "title": "Reverse Integer",
-                    "difficulty": "Medium",
-                    "link": "https://leetcode.com/problems/reverse-integer/",
-                    "description": "Given a signed 32-bit integer x, return x with its digits reversed. If reversing x causes the value to go outside the signed 32-bit integer range [-2^31, 2^31 - 1], then return 0.",
-                    "details": {
-                        "key_idea": "To reverse an integer, we can use integer arithmetic. We repeatedly extract the last digit of the number using the modulo operator (%) and add it to the reversed number after multiplying by 10. We then update the original number by integer division (//) to remove the last digit. We continue this process until the original number becomes 0.",
-                        "time_complexity": "O(log(x))",
-                        "space_complexity": "O(1)",
-                        "python_solution": "class Solution:\n    def reverse(self, x: int) -> int:\n        INT_MAX = 2**31 - 1\n        INT_MIN = -(2**31)\n\n        reversed_num = 0\n        sign = 1 if x > 0 else -1\n        x = abs(x)\n\n        while x != 0:\n            pop = x % 10\n            x //= 10\n\n            if reversed_num > (INT_MAX - pop) // 10:\n                return 0\n\n            reversed_num = reversed_num * 10 + pop\n\n        return reversed_num * sign"
-                    }
-                }
+                // {
+                //     "id": 7,
+                //     "title": "Reverse Integer",
+                //     "difficulty": "Medium",
+                //     "link": "https://leetcode.com/problems/reverse-integer/",
+                //     "description": "Given a signed 32-bit integer x, return x with its digits reversed. If reversing x causes the value to go outside the signed 32-bit integer range [-2^31, 2^31 - 1], then return 0.",
+                //     "details": {
+                //         "key_idea": "To reverse an integer, we can use integer arithmetic. We repeatedly extract the last digit of the number using the modulo operator (%) and add it to the reversed number after multiplying by 10. We then update the original number by integer division (//) to remove the last digit. We continue this process until the original number becomes 0.",
+                //         "time_complexity": "O(log(x))",
+                //         "space_complexity": "O(1)",
+                //         "python_solution": "class Solution:\n    def reverse(self, x: int) -> int:\n        INT_MAX = 2**31 - 1\n        INT_MIN = -(2**31)\n\n        reversed_num = 0\n        sign = 1 if x > 0 else -1\n        x = abs(x)\n\n        while x != 0:\n            pop = x % 10\n            x //= 10\n\n            if reversed_num > (INT_MAX - pop) // 10:\n                return 0\n\n            reversed_num = reversed_num * 10 + pop\n\n        return reversed_num * sign"
+                //     }
+                // }
             ]
         },
     ]
